@@ -1,0 +1,119 @@
+/* === Global Body Background === */
+body {
+    background-image: url('bg.jpg.jpeg'); /* Make sure the image file is in your project folder */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #4888e8; /* Make text white for contrast */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  
+  }
+  
+  /* === Section Styling (with transparency) === */
+  .section {
+    padding: 2em;
+    background: rgba(255, 255, 255, 0.912); /* Semi-transparent black */
+    margin: 1em;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  /* === Center navbar heading === */
+  
+  
+  /* === Profile image === */
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 1em auto;
+    display: block;
+    border: 3px solid rgb(7, 7, 7);
+  }
+  
+  /* === Video styling === */
+  video {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    border: 3px solid rgb(10, 1, 1);
+  }
+  /* Transparent Navbar */
+.navbar {
+    background-color: transparent;
+    color: black; /* or white, depending on your background image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+  }
+  
+  /* Nav Links */
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+    padding: 0;
+    margin-top: 0.5em;
+    background: transparent;
+    color: black;
+  }
+  
+  .navbar a {
+    color: rgb(246, 244, 244); /* or white, depending on your background image */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Center Navbar Heading */
+  .navbar h1 {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    color: rgb(10, 1, 1); /* or white if needed */
+  }
+  
+  
+  /* === Footer === */
+  footer {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 248, 248);
+    padding: 1em;
+    font-size: 0.9rem;
+  }
+  
+  /* === Navbar === */
+ 
+  
+  
+  
+  
+  .navbar a:hover {
+    color: #ffdd59;
+  }
+  
+  /* === Responsive design === */
+  @media (max-width: 768px) {
+    .navbar ul {
+      flex-direction: column;
+      gap: 0.5em;
+    }
+  
+    .profile-img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  
