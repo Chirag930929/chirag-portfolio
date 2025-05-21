@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="dark:bg-gray-900 text-gray-900 dark:text-white">
+
+  <section id="contact" class="px-4 py-10 bg-white dark:bg-gray-900">
+    <div class="max-w-3xl mx-auto bg-white/70 dark:bg-gray-800/70 p-6 rounded-xl shadow-lg text-center">
+      <h2 class="text-3xl font-bold text-red-700 dark:text-red-400 mb-6 flex justify-center items-center gap-2">
+        <i class="fas fa-envelope"></i> Contact Details
+      </h2>
+
+      <form id="contact-form" class="space-y-6 text-left">
+        <div>
+          <label for="name" class="block mb-2 font-semibold">Name</label>
+          <input type="text" name="name" id="name" required
+                 class="w-full p-3 rounded border dark:bg-gray-700 dark:border-gray-600"/>
+        </div>
+        <div>
+          <label for="email" class="block mb-2 font-semibold">Email</label>
+          <input type="email" name="email" id="email" required
+                 class="w-full p-3 rounded border dark:bg-gray-700 dark:border-gray-600"/>
+        </div>
+        <div>
+          <label for="message" class="block mb-2 font-semibold">Message</label>
+          <textarea name="message" id="message" rows="4" required
+                    class="w-full p-3 rounded border dark:bg-gray-700 dark:border-gray-600"></textarea>
+        </div>
+        <button type="submit"
+                class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("hk4CvqRIGUF11wIkM"); // Replace with your actual EmailJS public key
+    })();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("contact-form");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        emailjs.sendForm("service_93l803f", "template_849985k", this)
+          .then(() => {
+            alert("Message sent successfully!");
+            form.reset();
+          }, (err) => {
+            alert("Failed to send message. Please check console for details.");
+            console.error("EmailJS Error:", err);
+          });
+      });
+    });
+  </script>
+
+</body>
+</html>
