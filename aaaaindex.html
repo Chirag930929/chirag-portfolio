@@ -1,274 +1,227 @@
 <!DOCTYPE html>
 <html lang="en" class="transition-colors duration-300">
 <head>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    darkMode: 'class'
-  }
-</script>
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Playfair+Display:wght@800&family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chirag C. Chogale | Portfolio</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body class="bg-white text-black dark:bg-gray-900 dark:text-white">
 
-  <!-- Navigation -->
-  <header class="sticky top-0 z-50 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 shadow-md dark:from-gray-800 dark:via-gray-900 dark:to-black">
-    <nav class="container mx-auto flex items-center justify-between px-6 py-4 text-white">
-      
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 shadow-md dark:from-gray-800 dark:via-gray-900 dark:to-black">
+  <nav class="container mx-auto px-4 py-4 flex items-center justify-between text-white">
+    <h1 class="text-2xl font-bold">Chirag C. Chogale</h1>
 
-      
+    <!-- Hamburger Icon -->
+    <button id="menuToggle" class="md:hidden text-2xl">
+      <i class="fas fa-bars"></i>
+    </button>
 
-      <!-- Brand Name -->
-      <h1 class="text-2xl md:text-3xl font-bold tracking-wide">Chirag C. Chogale</h1>
+    <!-- Menu Links -->
+    <ul id="menu" class="hidden md:flex md:gap-6 gap-4 flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto bg-gradient-to-b from-blue-700 to-purple-700 md:bg-transparent text-white md:text-white p-4 md:p-0 transition-all">
+      <li><a href="#welcome" class="block hover:text-yellow-300">Welcome</a></li>
+      <li><a href="#about" class="block hover:text-yellow-300">About Me</a></li>
+      <li><a href="#achievements" class="block hover:text-yellow-300">Achievements</a></li>
+      <li><a href="#goals" class="block hover:text-yellow-300">Goals</a></li>
+      <li><a href="#personal" class="block hover:text-yellow-300">Personal</a></li>
+      <li><a href="#contact" class="block hover:text-yellow-300">Contact</a></li>
+    </ul>
 
-      <div class="flex gap-6 items-center">
-        <!-- Navigation Menu -->
-        <ul class="flex gap-6 text-sm md:text-base font-medium">
-          <li><a href="#welcome" class="hover:text-yellow-300 transition">Welcome</a></li>
-          <li><a href="#about" class="hover:text-yellow-300 transition">About Me</a></li>
-          <li><a href="#achievements" class="hover:text-yellow-300 transition">Achievements</a></li>
-          <li><a href="#goals" class="hover:text-yellow-300 transition">Goals</a></li>
-          <li><a href="#personal" class="hover:text-yellow-300 transition">Personal</a></li>
-        </ul>
-
-        <!-- Dark Mode Toggle Button -->
-        <button onclick="toggleDarkMode()" 
-          class="bg-black/40 dark:bg-white/20 text-white dark:text-black px-4 py-2 rounded hover:bg-black/60 dark:hover:bg-white/40 transition" 
-          aria-label="Toggle Dark Mode"
-          title="Toggle Dark Mode">
-          🌙
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  
-
-
-  <!-- Welcome Section -->
-  <section id="welcome" class="px-4 py-16 bg-gradient-to-br from-blue-100 via-white to-purple-100 dark:from-gray-800 dark:via-gray-900 dark:to-black">
-    <div class="max-w-5xl mx-auto bg-white/20 dark:bg-black/30 backdrop-blur-lg border border-white/20 dark:border-gray-700 p-10 rounded-[2rem] shadow-2xl text-gray-900 dark:text-white">
-
-      <!-- Heading -->
-      <h2 class="text-4xl font-extrabold mb-10 text-center">
-        👋 Welcome to My Portfolio
-      </h2>
-
-      <div class="flex flex-col md:flex-row items-center justify-between gap-10">
-        
-        <!-- Profile Picture -->
-        <div class="flex flex-col items-center">
-          <img id="profilePic" src="chiragphoto.jpg" alt="Chirag Photo"
-               class="w-52 h-52 rounded-full shadow-xl border-4 border-indigo-500 object-cover hover:scale-110 transition-transform duration-300 cursor-pointer" />
-          <p class="mt-4 text-xl font-semibold text-gray-800 dark:text-gray-200">Chirag Chandrakant Chogale</p>
-        </div>
-
-        <!-- Intro Text & Video -->
-        <div class="text-center md:text-left flex flex-col gap-6">
-          <p class="text-lg text-gray-800 dark:text-gray-300 leading-relaxed">
-            I'm an aspiring <span class="text-indigo-700 font-semibold dark:text-indigo-400">Electronics & Computer Science Engineer</span> who believes in 
-            <span class="text-blue-700 font-semibold dark:text-blue-400">innovation</span>, 
-            <span class="text-purple-700 font-semibold dark:text-purple-400">learning</span>, and building impactful solutions.
-          </p>
-          <video controls class="w-full max-w-md rounded-xl border border-gray-300 dark:border-gray-600 shadow-lg">
-            <source src="portfoliovideo.mp4.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal Popup -->
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-60 hidden justify-center items-center z-50">
-      <div class="relative">
-        <img src="chiragphoto.jpg" alt="Chirag Photo Enlarged"
-             class="w-96 h-96 object-cover rounded-full border-4 border-white shadow-2xl">
-        <button id="closeModal" class="absolute top-2 right-2 text-white bg-red-500 rounded-full w-8 h-8 flex items-center justify-center font-bold hover:bg-red-600">&times;</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Me -->
-  <section id="about" class="px-4 py-10 bg-transparent backdrop-blur-md">
-    <div class="max-w-3xl mx-auto bg-white/60 dark:bg-gray-800/60 p-6 rounded-xl shadow-lg text-center">
-      <h2 class="text-3xl font-bold text-blue-800 dark:text-blue-400 mb-6 flex items-center justify-center gap-2">
-        👤 About Me
-      </h2>
-
-      <ul class="text-left text-lg text-gray-800 dark:text-gray-300 space-y-4">
-        <li><strong>🙍‍♂️ Name:</strong> Chirag Chandrakant Chogale</li>
-        <li><strong>📍 Location:</strong> Boisar, Mumbai</li>
-        <li><strong>🎓 Education:</strong> B.E. in Electronics and Computer Science Engineering (2023–2027), <span class="text-green-700 dark:text-green-400 font-semibold">CGPA: 9.32</span></li>
-        <li><strong>🗣️ Languages:</strong> English, Hindi, Marathi</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Achievements -->
-  <section id="achievements" class="px-4 py-10 bg-transparent backdrop-blur-md">
-    <div class="max-w-3xl mx-auto bg-white/60 dark:bg-gray-800/60 p-6 rounded-xl shadow-lg text-center">
-      <h2 class="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">🏆 Achievements</h2>
-      <a href="achievements.html" class="text-blue-700 dark:text-blue-400 underline hover:text-yellow-400 transition">
-        View Full Achievements Page →
-      </a>
-
-      <ul class="space-y-3 mt-6">
-        <li class="bg-white/70 dark:bg-gray-700/70 p-4 rounded shadow text-gray-800 dark:text-gray-200">✔️ CCNA Certification</li>
-        <li class="bg-white/70 dark:bg-gray-700/70 p-4 rounded shadow text-gray-800 dark:text-gray-200">✔️ Cybersecurity Workshop (Certified)</li>
-        <li class="bg-white/70 dark:bg-gray-700/70 p-4 rounded shadow text-gray-800 dark:text-gray-200">✔️ 4-hour Blockchain Hackathon</li>
-        <li class="bg-white/70 dark:bg-gray-700/70 p-4 rounded shadow text-gray-800 dark:text-gray-200">✔️ Finalist in Java Logic Building Contest</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Future Goals -->
-  <section id="goals" class="px-4 py-10 bg-transparent backdrop-blur-md">
-    <div class="max-w-3xl mx-auto bg-white/60 dark:bg-gray-800/60 p-6 rounded-xl shadow-lg text-center">
-      <h2 class="text-3xl font-bold text-purple-700 dark:text-purple-400 mb-4 flex justify-center items-center gap-2">
-        🎯 Future Goals
-      </h2>
-      <ul class="text-lg text-gray-800 dark:text-gray-300 list-disc text-left pl-6 space-y-3">
-        <li>
-          I aspire to become a <span class="font-semibold text-green-700 dark:text-green-400">skilled Electronics Engineer</span>.
-        </li>
-        <li>
-          I’m also passionate about growing into an <span class="font-semibold text-blue-600 dark:text-blue-400">HR professional</span>.
-        </li>
-        <li>
-          I aim to <span class="font-semibold text-indigo-600 dark:text-indigo-400">contribute to India’s tech-driven economy</span>.
-        </li>
-        <li>
-          I want to <span class="font-semibold text-indigo-600 dark:text-indigo-400">support talented individuals</span> through HR or mentoring.
-        </li>
-        <li>
-          I strive to <span class="font-semibold text-indigo-600 dark:text-indigo-400">build impactful hardware/software solutions</span> in electronics and technology.
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Personal -->
-  <section id="personal" class="px-4 py-10 bg-transparent backdrop-blur-md">
-    <div class="max-w-3xl mx-auto bg-white/60 dark:bg-gray-800/60 p-6 rounded-xl shadow-lg text-center">
-      <h2 class="text-3xl font-bold mb-4 text-indigo-700 dark:text-indigo-400">✨ Personal</h2>
-
-      <ul class="text-left text-lg text-gray-800 dark:text-gray-300 space-y-3">
-        <li><strong>👨‍👩‍👧 Family:</strong> Supportive and loving</li>
-        <li><strong>⚽ Hobbies:</strong> Bodybuilding, cooking, travel, exploring tech trends</li>
-        <li><strong>🎯 Traits:</strong> Curious, dedicated, lifelong learner</li>
-        <li><strong>🌐 Languages:</strong> English, Marathi, Hindi</li>
-      </ul>
-    </div>
-  </section>
-
-  <script>
-    // Dark mode toggle logic
-    function toggleDarkMode() {
-      document.documentElement.classList.toggle('dark');
-      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-    }
-
-    // Load saved theme on page load
-    if (localStorage.getItem('theme') === 'dark') {
-      document.documentElement.classList.add('dark');
-    }
-
-    // Modal popup for profile image
-    const profilePic = document.getElementById('profilePic');
-    const modal = document.getElementById('modal');
-    const closeModalBtn = document.getElementById('closeModal');
-
-    profilePic.addEventListener('click', () => {
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    });
-
-    closeModalBtn.addEventListener('click', () => {
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    });
-
-    // Also close modal when clicking outside the image
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.add('hidden');   
-        modal.classList.remove('flex');
-      }
-    });
-  </script>
-<!-- Contact Details -->
- 
-<section id="contact"  class="px-4 py-10 bg-white dark:bg-gray-900">
-  <div class="max-w-3xl mx-auto bg-white/70 dark:bg-gray-800/70 p-6 rounded-xl shadow-lg text-center">
-    <h2 class="text-3xl font-bold text-red-700 dark:text-red-400 mb-6 flex justify-center items-center gap-2">
-     <a href="contact.html" target="_blank" class="hover:text-red-500 transition"> 📞Contact</a>
-    </h2>
-
-    <div class="flex flex-wrap justify-center gap-6 text-lg text-gray-800 dark:text-gray-200">
-
-      <a href="mailto:chiragchogale2005@gmail.com" class="flex items-center gap-2 hover:text-blue-600 transition">
-        <i class="fas fa-envelope text-xl"></i>
-        <span>Email</span>
-      </a>
-
-      <a href="https://www.linkedin.com/in/chirag-chogale-62872a354/" target="_blank" class="flex items-center gap-2 hover:text-blue-500 transition">
-        <i class="fab fa-linkedin text-xl"></i>
-        <span>LinkedIn</span>
-      </a>
-
-      <a href="https://github.com/Chirag930929/chirag-portfolio" target="_blank" class="flex items-center gap-2 hover:text-gray-700 dark:hover:text-white transition">
-        <i class="fab fa-github text-xl"></i>
-        <span>GitHub</span>
-      </a>
-
-      <a href="https://www.instagram.com/chirag_930929/?__pwa=1" target="_blank" class="flex items-center gap-2 hover:text-green-600 transition">
-        <i class="fab fa-instagram text-xl"></i>
-        <span>Instagram</span>
-      </a>
-
-      <!-- Location -->
-    <div class="mt-10 text-left">
-      <div class="flex items-center justify-center gap-2 mb-4 text-gray-800 dark:text-gray-200">
-        <i class="fas fa-map-marker-alt text-red-500 text-xl"></i>
-        <span class="text-lg font-medium">Boisar, Mumbai, India</span>
+    <!-- Dark Mode Toggle -->
+    <button onclick="toggleDarkMode()" class="hidden md:block bg-black/40 dark:bg-white/20 text-white dark:text-black px-3 py-1 rounded hover:bg-black/60 dark:hover:bg-white/40 transition ml-4" title="Toggle Dark Mode">🌙</button>
+  </nav>
+</header>
+<!-- Welcome -->
+<section id="welcome" class="px-4 py-12 sm:py-16 bg-gradient-to-br from-blue-100 via-white to-purple-100 dark:from-gray-800 dark:via-gray-900 dark:to-black">
+  <div class="max-w-5xl mx-auto bg-white/20 dark:bg-black/30 backdrop-blur-lg border border-white/20 dark:border-gray-700 p-6 sm:p-10 rounded-[2rem] shadow-2xl">
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 text-center">👋 Welcome to My Portfolio</h2>
+    
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-10">
+      <div class="flex flex-col items-center text-center">
+        <img id="profilePic" src="chiragphoto.jpg" alt="Chirag" class="w-40 h-40 sm:w-52 sm:h-52 rounded-full shadow-xl border-4 border-indigo-500 object-cover hover:scale-110 transition-transform cursor-pointer"/>
+        <p class="mt-4 text-lg font-semibold">Chirag Chandrakant Chogale</p>
       </div>
 
-      <!-- Google Map Embed -->
-      <div class="w-full h-72 rounded-xl overflow-hidden shadow-lg">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15054.449408530182!2d72.7459074!3d19.8032676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be70133c4b6e7a3%3A0xa90d07b13f67b1c9!2sBoisar%2C%20Maharashtra%20401401!5e0!3m2!1sen!2sin!4v1716215409403!5m2!1sen!2sin"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+      <div class="text-center sm:text-left flex flex-col gap-4 sm:gap-6 w-full max-w-md">
+        <p class="text-gray-800 dark:text-gray-300 text-base sm:text-lg leading-relaxed">
+          I'm an aspiring <span class="text-indigo-700 dark:text-indigo-400 font-semibold">Electronics & Computer Science Engineer</span> passionate about 
+          <span class="text-blue-700 dark:text-blue-400 font-semibold">innovation</span>, 
+          <span class="text-purple-700 dark:text-purple-400 font-semibold">learning</span>, and building impactful solutions.
+        </p>
+        <video controls class="w-full rounded-xl border border-gray-300 dark:border-gray-600 shadow-lg">
+          <source src="portfoliovideo.mp4.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   </div>
 
-    
-
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-60 hidden justify-center items-center z-50">
+    <div class="relative">
+      <img src="chiragphoto.jpg" alt="Chirag Enlarged" class="w-72 h-72 sm:w-96 sm:h-96 object-cover rounded-full border-4 border-white shadow-2xl">
+      <button id="closeModal" class="absolute top-2 right-2 text-white bg-red-500 rounded-full w-8 h-8 flex items-center justify-center font-bold hover:bg-red-600">&times;</button>
+    </div>
+  </div>
 </section>
+
+<!-- About -->
+<section id="about" class="px-4 py-10">
+  <div class="max-w-3xl mx-auto bg-white/70 dark:bg-gray-800/70 p-6 rounded-xl shadow text-center">
+    <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 dark:text-blue-400 mb-6">👤 About Me</h2>
+    <ul class="text-left space-y-3 text-gray-800 dark:text-gray-300 text-base sm:text-lg">
+      <li><strong>🙍‍♂️ Name:</strong> Chirag Chandrakant Chogale</li>
+      <li><strong>📍 Location:</strong> Boisar, Mumbai</li>
+      <li><strong>🎓 Education:</strong> B.E. (2023–2027), CGPA: <span class="text-green-600 dark:text-green-400 font-semibold">9.32</span></li>
+      <li><strong>🗣️ Languages:</strong> English, Hindi, Marathi</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Achievements -->
+<section id="achievements" class="px-4 py-10">
+  <div class="max-w-3xl mx-auto bg-white/70 dark:bg-gray-800/70 p-6 rounded-xl shadow text-center">
+    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">🏆 Achievements</h2>
+    <a href="achievements.html" class="text-blue-600 dark:text-blue-400 underline hover:text-yellow-500 transition">View Full Achievements Page →</a>
+    <ul class="mt-6 space-y-3">
+      <li class="bg-white/90 dark:bg-gray-700/70 p-3 rounded shadow">✔️ CCNA Certification</li>
+      <li class="bg-white/90 dark:bg-gray-700/70 p-3 rounded shadow">✔️ Cybersecurity Workshop (Certified)</li>
+      <li class="bg-white/90 dark:bg-gray-700/70 p-3 rounded shadow">✔️ Blockchain Hackathon (4 hrs)</li>
+      <li class="bg-white/90 dark:bg-gray-700/70 p-3 rounded shadow">✔️ Java Logic Building Finalist</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Goals -->
+<section id="goals" class="px-4 py-10">
+  <div class="max-w-3xl mx-auto bg-white/70 dark:bg-gray-800/70 p-6 rounded-xl shadow text-center">
+    <h2 class="text-2xl sm:text-3xl font-bold text-purple-700 dark:text-purple-400 mb-4">🎯 Future Goals</h2>
+    <ul class="list-disc text-left pl-6 space-y-3 text-gray-800 dark:text-gray-300 text-base sm:text-lg">
+      <li>Become a <span class="font-semibold text-green-700 dark:text-green-400">skilled Electronics Engineer</span>.</li>
+      <li>Grow as a <span class="font-semibold text-blue-600 dark:text-blue-400">HR professional</span>.</li>
+      <li>Contribute to <span class="font-semibold text-indigo-600 dark:text-indigo-400">India’s tech economy</span>.</li>
+      <li>Support <span class="font-semibold text-indigo-600 dark:text-indigo-400">talented individuals</span> through mentoring.</li>
+      <li>Build impactful <span class="font-semibold text-indigo-600 dark:text-indigo-400">tech solutions</span>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Personal -->
+<section id="personal" class="px-4 py-10">
+  <div class="max-w-3xl mx-auto bg-white/70 dark:bg-gray-800/70 p-6 rounded-xl shadow text-center">
+    <h2 class="text-2xl sm:text-3xl font-bold text-indigo-700 dark:text-indigo-400 mb-4">✨ Personal</h2>
+    <ul class="text-left space-y-3 text-gray-800 dark:text-gray-300 text-base sm:text-lg">
+      <li><strong>👨‍👩‍👧 Family:</strong> Supportive and loving</li>
+      <li><strong>⚽ Hobbies:</strong> Bodybuilding, cooking, travel, tech trends</li>
+      <li><strong>🎯 Traits:</strong> Curious, dedicated, lifelong learner</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="px-4 py-10">
+  <div class="max-w-3xl mx-auto bg-white/70 dark:bg-gray-800/70 p-6 rounded-xl shadow text-center">
+    <h2 class="text-2xl sm:text-3xl font-bold text-red-700 dark:text-red-400 mb-6">
+      <a href="contact.html" target="_blank" class="hover:text-red-500 transition">📞 Contact</a>
+    </h2>
+    <div class="flex flex-wrap justify-center gap-4 text-lg text-gray-800 dark:text-gray-200">
+      <a href="mailto:chiragchogale2005@gmail.com" class="flex items-center gap-2 hover:text-blue-600"><i class="fas fa-envelope"></i> Email</a>
+      <a href="https://www.linkedin.com/in/chirag-chogale-62872a354/" target="_blank" class="flex items-center gap-2 hover:text-blue-500"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/Chirag930929/chirag-portfolio" target="_blank" class="flex items-center gap-2 hover:text-gray-700 dark:hover:text-white"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.instagram.com/chirag_930929/" target="_blank" class="flex items-center gap-2 hover:text-green-600"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+
+    <div class="mt-8 text-center">
+      <div class="flex justify-center gap-2 mb-4">
+        <i class="fas fa-map-marker-alt text-red-500"></i>
+        <span>Boisar, Mumbai, India</span>
+      </div>
+      <div class="w-full h-64 sm:h-72 rounded-xl overflow-hidden shadow-lg">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15054.449408530182!2d72.7459074!3d19.8032676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be70133c4b6e7a3%3A0xa90d07b13f67b1c9!2sBoisar%2C%20Maharashtra%20401401!5e0!3m2!1sen!2sin!4v1716215409403!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white text-center py-4 mt-10 shadow-inner">
   <p class="text-sm">&copy; 2025 Chirag Chandrakant Chogale. All rights reserved.</p>
 </footer>
 
+<script>
+  function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  }
+
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+  }
+
+  const profilePic = document.getElementById('profilePic');
+  const modal = document.getElementById('modal');
+  const closeModalBtn = document.getElementById('closeModal');
+
+  profilePic.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  });
+</script>
+<script>
+  // Dark Mode Toggle
+  function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  }
+
+  // Load Theme on Page Load
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+  }
+
+  // Hamburger Menu Toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('menu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
 
 </body>
-</html> 
-
-
+</html>
